@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="nI4-nt-Ux9">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Task5" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3Pi-Ff-y9F">
+                                <rect key="frame" x="87" y="396" width="240" height="240"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="B2z-ca-fyj"/>
+                                    <constraint firstAttribute="width" secondItem="3Pi-Ff-y9F" secondAttribute="height" multiplier="1:1" id="pvG-Q6-fxK"/>
+                                </constraints>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="smJ-oi-4lX">
+                                <rect key="frame" x="87" y="70" width="240" height="240"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="RHk-Xg-zsl"/>
+                                    <constraint firstAttribute="width" secondItem="smJ-oi-4lX" secondAttribute="height" multiplier="1:1" id="awY-N8-uN8"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="smJ-oi-4lX" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Sca-d1-2h8"/>
+                            <constraint firstItem="smJ-oi-4lX" firstAttribute="width" secondItem="smJ-oi-4lX" secondAttribute="height" multiplier="1:1" id="Sux-tD-ybz"/>
+                            <constraint firstItem="smJ-oi-4lX" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="26" id="TEC-Na-G9t"/>
+                            <constraint firstItem="smJ-oi-4lX" firstAttribute="leading" secondItem="3Pi-Ff-y9F" secondAttribute="leading" id="YR7-iK-vI5"/>
+                            <constraint firstItem="smJ-oi-4lX" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="iox-5q-Imz"/>
+                            <constraint firstItem="3Pi-Ff-y9F" firstAttribute="top" secondItem="smJ-oi-4lX" secondAttribute="bottom" constant="86" id="jra-z4-1Gd"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="blurredImageView" destination="3Pi-Ff-y9F" id="it4-KE-Bg0"/>
+                        <outlet property="imageView" destination="smJ-oi-4lX" id="ccy-Yu-ujj"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-42.028985507246382" y="-27.455357142857142"/>
+        </scene>
+        <!--Primes View Controller-->
+        <scene sceneID="Xjb-e8-XCj">
+            <objects>
+                <viewController id="nI4-nt-Ux9" customClass="PrimesViewController" customModule="Task5" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Ens-Ht-uZO">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lfx-2L-odS">
+                                <rect key="frame" x="164.5" y="432.5" width="85" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Calculate"/>
+                                <connections>
+                                    <action selector="calculatePrimes:" destination="nI4-nt-Ux9" eventType="touchUpInside" id="UBk-wv-QrD"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="a69-xh-J7b">
+                                <rect key="frame" x="158" y="358.5" width="98" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                            </textField>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="GOV-13-h6c"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Lfx-2L-odS" firstAttribute="top" secondItem="a69-xh-J7b" secondAttribute="bottom" constant="40" id="SzD-0X-8A1"/>
+                            <constraint firstItem="Lfx-2L-odS" firstAttribute="centerX" secondItem="Ens-Ht-uZO" secondAttribute="centerX" id="aQy-Q6-lau"/>
+                            <constraint firstItem="Lfx-2L-odS" firstAttribute="centerY" secondItem="Ens-Ht-uZO" secondAttribute="centerY" id="afV-TQ-nC3"/>
+                            <constraint firstItem="a69-xh-J7b" firstAttribute="leading" secondItem="GOV-13-h6c" secondAttribute="leading" constant="158" id="ki1-e7-1qz"/>
+                            <constraint firstItem="GOV-13-h6c" firstAttribute="trailing" secondItem="a69-xh-J7b" secondAttribute="trailing" constant="158" id="qle-Nd-Hjk"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="textField" destination="a69-xh-J7b" id="RPl-Wk-noz"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HEA-xl-CQh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="853.62318840579712" y="-27.455357142857142"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
