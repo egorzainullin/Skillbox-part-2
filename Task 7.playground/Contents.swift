@@ -176,7 +176,17 @@ class EdgeEnd {
 }
 
 
-class Node {
+class Node: CustomStringConvertible {
+    var description: String { return ds() }
+    
+    func ds() -> String {
+        var toDescription = ""
+        for edge in edges {
+            toDescription += "(\(edge.nodeName), \(edge.time))"
+        }
+        return toDescription
+    }
+    
     var edges: [EdgeEnd]
     
     var nodeName: String
@@ -188,9 +198,71 @@ class Node {
 }
 
 class Graph {
-    var nodes: [Node]
+    var nodesDic: Dictionary<String,Node> = [:]
     
     init(nodes: [Node]) {
-        self.nodes = nodes
+        for node in nodes {
+            nodesDic[node.nodeName] = node
+        }
     }
+    
+    func printGraph(){
+        for (name, node) in nodesDic {
+            print("\(name): \(node)")
+        }
+    }
+    
 }
+
+
+func findPath(graph: Graph, start: String, end: String) -> [String]? {
+    var parents = [String : Node]()
+    var nodesDic = graph.nodesDic
+    var visited = [String : Bool]()
+    for (name, _) in nodesDic {
+        visited[name] = false
+    }
+    func preorder(root: Node) {
+        visited[root.nodeName] = true
+        for edge in root.edges {
+            if let v = visited[edge.nodeName], !v {
+                parents[edge.nodeName] = root
+                if let newRoot = nodesDic[edge.nodeName]
+                {
+                    preorder(root: newRoot)
+                }
+            }
+        }
+    }
+    if let node = nodesDic[start] {
+        preorder(root: node)
+    }
+    func findReversedPath() -> [String]? {
+        var nodeList = [String]()
+        if var parent = parents[end]
+        {
+            nodeList.append(end)
+            while (parent.nodeName != start) {
+                nodeList.append(parent.nodeName)
+                parent = parents[parent.nodeName]!
+            }
+            nodeList.append(start)
+            return nodeList
+        }
+        return nil
+        
+    }
+    return findReversedPath()?.reversed()
+}
+
+let node1 = Node(nodeName: "1", edges: [EdgeEnd(time: 1, nodeName: "2")])
+let node2 = Node(nodeName: "2", edges: [EdgeEnd(time: 2, nodeName: "3"), EdgeEnd(time: 3, nodeName: "4")])
+let node3 = Node(nodeName: "3", edges: [])
+let node4 = Node(nodeName: "4", edges: [EdgeEnd(time: 5, nodeName: "5"), EdgeEnd(time: 2, nodeName: "6"), EdgeEnd(time: 3, nodeName: "7")])
+let node5 = Node(nodeName: "5", edges: [])
+let node6 = Node(nodeName: "6", edges: [])
+let node7 = Node(nodeName: "7", edges: [])
+let graph = Graph(nodes: [node1, node2, node3, node4, node5, node6, node7])
+
+graph.printGraph()
+print(findPath(graph: graph, start: "1", end: "7"))
