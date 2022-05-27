@@ -1,4 +1,6 @@
 // 2
+
+import Foundation
 class StringListNode {
     var value: String
     
@@ -131,13 +133,64 @@ class BinTree {
         printTree(root: root)
     }
     
-    func contains(value: String) {
-        
+    private func contains(root: TreeElementNode?, value: String) -> Bool {
+        if let root = root {
+            if root.value > value {
+                return contains(root: root.left, value: value)
+            }
+            if root.value == value {
+                return true
+            }
+            if root.value < value {
+                return contains(root: root.right, value: value)
+            }
+        }
+        return false
+    }
+    
+    func contains(value: String) -> Bool {
+        return contains(root: root, value: value)
     }
 }
 
-let tree = BinTree(values: ["1", "2", "3"])
+let tree = BinTree(values: ["2", "1", "3"])
 
-print("-----------")
 
 tree.printTree()
+tree.contains(value: "1")
+tree.contains(value: "3")
+
+tree.contains(value: "4")
+
+// 4
+
+class EdgeEnd {
+    var time: Double
+    
+    var nodeName: String
+    
+    init(time: Double, nodeName: String) {
+        self.time = time
+        self.nodeName = nodeName
+    }
+}
+
+
+class Node {
+    var edges: [EdgeEnd]
+    
+    var nodeName: String
+    
+    init(nodeName: String, edges: [EdgeEnd]) {
+        self.nodeName = nodeName
+        self.edges = edges
+    }
+}
+
+class Graph {
+    var nodes: [Node]
+    
+    init(nodes: [Node]) {
+        self.nodes = nodes
+    }
+}
