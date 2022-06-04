@@ -217,7 +217,7 @@ class Graph {
 
 func findPath(graph: Graph, start: String, end: String) -> [String]? {
     var parents = [String : Node]()
-    var nodesDic = graph.nodesDic
+    let nodesDic = graph.nodesDic
     var visited = [String : Bool]()
     for (name, _) in nodesDic {
         visited[name] = false
@@ -265,4 +265,37 @@ let node7 = Node(nodeName: "7", edges: [])
 let graph = Graph(nodes: [node1, node2, node3, node4, node5, node6, node7])
 
 graph.printGraph()
-print(findPath(graph: graph, start: "1", end: "7"))
+print(findPath(graph: graph, start: "1", end: "7") ?? "")
+
+// 5
+extension Array where Element: Comparable {
+    func insertSort() -> [Element] {
+        var arr = self
+        let n = arr.count
+        for i in 1..<n {
+            var j = i
+            while (j > 0) && (arr[j-1] > arr[j]) {
+                let temp = arr[j-1]
+                arr[j-1] = arr[j]
+                arr[j] = temp
+                j -= 1
+            }
+        }
+        return arr
+    }
+    
+    func qsort() -> [Element] {
+        let arr = self
+        let n = arr.count
+        if n == 0 || n == 1 {
+            return arr
+        }
+        let h = arr[0]
+        let arr1 = arr.filter({$0 < h}).qsort()
+        let arr2 = arr.filter({$0 > h}).qsort()
+        return arr1 + [h] + arr2
+    }
+}
+
+print([3, 1, 4, 7, 5, 9].insertSort())
+print([3, 1, 4, 7, 5, 9].qsort())
