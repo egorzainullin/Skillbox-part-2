@@ -13,7 +13,7 @@
 		4BA5887F284BC421000E3569 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4BA5887D284BC421000E3569 /* Main.storyboard */; };
 		4BA58881284BC422000E3569 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4BA58880284BC422000E3569 /* Assets.xcassets */; };
 		4BA58884284BC422000E3569 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4BA58882284BC422000E3569 /* LaunchScreen.storyboard */; };
-		4BA5888C284BDDE9000E3569 /* SegueSwizzler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BA5888B284BDDE9000E3569 /* SegueSwizzler.swift */; };
+		4BA5888E284BDEFC000E3569 /* SegueSwizzler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BA5888D284BDEFC000E3569 /* SegueSwizzler.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,7 +25,7 @@
 		4BA58880284BC422000E3569 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4BA58883284BC422000E3569 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4BA58885284BC422000E3569 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		4BA5888B284BDDE9000E3569 /* SegueSwizzler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SegueSwizzler.swift; path = ../../../../../Downloads/SegueSwizzler.swift; sourceTree = "<group>"; };
+		4BA5888D284BDEFC000E3569 /* SegueSwizzler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SegueSwizzler.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,11 +61,11 @@
 				4BA58877284BC421000E3569 /* AppDelegate.swift */,
 				4BA58879284BC421000E3569 /* SceneDelegate.swift */,
 				4BA5887B284BC421000E3569 /* ViewController.swift */,
-				4BA5888B284BDDE9000E3569 /* SegueSwizzler.swift */,
 				4BA5887D284BC421000E3569 /* Main.storyboard */,
 				4BA58880284BC422000E3569 /* Assets.xcassets */,
 				4BA58882284BC422000E3569 /* LaunchScreen.storyboard */,
 				4BA58885284BC422000E3569 /* Info.plist */,
+				4BA5888D284BDEFC000E3569 /* SegueSwizzler.swift */,
 			);
 			path = "Task 8_4";
 			sourceTree = "<group>";
@@ -142,7 +142,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4BA5887C284BC421000E3569 /* ViewController.swift in Sources */,
-				4BA5888C284BDDE9000E3569 /* SegueSwizzler.swift in Sources */,
+				4BA5888E284BDEFC000E3569 /* SegueSwizzler.swift in Sources */,
 				4BA58878284BC421000E3569 /* AppDelegate.swift in Sources */,
 				4BA5887A284BC421000E3569 /* SceneDelegate.swift in Sources */,
 			);
