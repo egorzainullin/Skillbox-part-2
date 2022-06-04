@@ -14,6 +14,7 @@
 		4BA5885C284BB026000E3569 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4BA5885B284BB026000E3569 /* Assets.xcassets */; };
 		4BA5885F284BB026000E3569 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4BA5885D284BB026000E3569 /* LaunchScreen.storyboard */; };
 		4BA58862284BB026000E3569 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BA58861284BB026000E3569 /* main.m */; };
+		4BA5886A284BBAE2000E3569 /* TwoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BA58869284BBAE2000E3569 /* TwoViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,8 @@
 		4BA5885E284BB026000E3569 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4BA58860284BB026000E3569 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4BA58861284BB026000E3569 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		4BA58868284BBAE2000E3569 /* TwoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TwoViewController.h; sourceTree = "<group>"; };
+		4BA58869284BBAE2000E3569 /* TwoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TwoViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +71,8 @@
 				4BA58855284BB024000E3569 /* ViewController.h */,
 				4BA58856284BB024000E3569 /* ViewController.m */,
 				4BA58858284BB024000E3569 /* Main.storyboard */,
+				4BA58868284BBAE2000E3569 /* TwoViewController.h */,
+				4BA58869284BBAE2000E3569 /* TwoViewController.m */,
 				4BA5885B284BB026000E3569 /* Assets.xcassets */,
 				4BA5885D284BB026000E3569 /* LaunchScreen.storyboard */,
 				4BA58860284BB026000E3569 /* Info.plist */,
@@ -149,6 +154,7 @@
 				4BA58857284BB024000E3569 /* ViewController.m in Sources */,
 				4BA58851284BB024000E3569 /* AppDelegate.m in Sources */,
 				4BA58862284BB026000E3569 /* main.m in Sources */,
+				4BA5886A284BBAE2000E3569 /* TwoViewController.m in Sources */,
 				4BA58854284BB024000E3569 /* SceneDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

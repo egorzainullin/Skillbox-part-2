@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="OHr-gf-Xao">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
@@ -70,6 +70,69 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-42.028985507246382" y="-27.455357142857142"/>
+        </scene>
+        <!--Two View Controller-->
+        <scene sceneID="vn2-3M-5wF">
+            <objects>
+                <viewController id="OHr-gf-Xao" customClass="TwoViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ihH-0g-89O">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="62" translatesAutoresizingMaskIntoConstraints="NO" id="Zif-Rd-Yl0">
+                                <rect key="frame" x="132" y="353.5" width="150" height="189"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tsm-03-cfm">
+                                        <rect key="frame" x="0.0" y="0.0" width="150" height="0.0"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="150" id="Ec1-qr-nZM"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gtu-W7-4aR">
+                                        <rect key="frame" x="0.0" y="62" width="150" height="34"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="150" id="vUw-l2-Uaj"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tML-rr-zKz">
+                                        <rect key="frame" x="41.5" y="158" width="67" height="31"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="31" id="p1Z-9L-Z0D"/>
+                                        </constraints>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                        <connections>
+                                            <action selector="printTwoDegree:" destination="OHr-gf-Xao" eventType="touchUpInside" id="oMb-ZS-viT"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="tsm-03-cfm" secondAttribute="trailing" id="JQf-yw-SHQ"/>
+                                    <constraint firstItem="tsm-03-cfm" firstAttribute="top" secondItem="Zif-Rd-Yl0" secondAttribute="top" id="ZUr-p1-FI0"/>
+                                    <constraint firstItem="tsm-03-cfm" firstAttribute="leading" secondItem="Zif-Rd-Yl0" secondAttribute="leading" id="mVh-t6-NRg"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="ic3-u5-di3"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Zif-Rd-Yl0" firstAttribute="centerX" secondItem="ihH-0g-89O" secondAttribute="centerX" id="7OF-el-Lmt"/>
+                            <constraint firstItem="Zif-Rd-Yl0" firstAttribute="centerY" secondItem="ihH-0g-89O" secondAttribute="centerY" id="FmG-tG-rjg"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="label" destination="tsm-03-cfm" id="OaL-5C-2bR"/>
+                        <outlet property="textField" destination="gtu-W7-4aR" id="dbe-2n-u8u"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zhh-cw-GSe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="836" y="-21"/>
         </scene>
     </scenes>
     <resources>
