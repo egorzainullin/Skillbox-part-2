@@ -18,7 +18,8 @@ class ViewController: UIViewController {
     var currentLocation: CLLocationCoordinate2D?
     
     var places = [
-        Place(coord: CLLocationCoordinate2D(latitude: 59.9340840311751, longitude: 30.3061486809257), name: "St Isaac Cathedral", image: "st_isaac")
+        Place(coord: CLLocationCoordinate2D(latitude: 59.9340840311751, longitude: 30.3061486809257), name: "St Isaac Cathedral", image: "st_isaac"),
+        Place(coord: CLLocationCoordinate2D(latitude: 62.0667, longitude: 35.233299), name: "Kizhi", image: "kizhi")
     ]
     
     override func viewDidLoad() {
