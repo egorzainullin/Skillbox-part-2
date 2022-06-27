@@ -19,35 +19,6 @@
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Pap-Lp-51y">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </mapView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="I2F-FF-Kft">
-                                <rect key="frame" x="346" y="361.5" width="68" height="173"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t03-Xw-YF4">
-                                        <rect key="frame" x="17.5" y="0.0" width="33" height="31"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="+"/>
-                                        <connections>
-                                            <action selector="zoomPlus:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Rzg-Y5-uJJ"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="03w-Gi-JJS">
-                                        <rect key="frame" x="18" y="71" width="32.5" height="31"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="_"/>
-                                        <connections>
-                                            <action selector="zoomMinus:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rnW-EH-Z9v"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YTc-nh-zd6">
-                                        <rect key="frame" x="0.0" y="142" width="68" height="31"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="Center"/>
-                                        <connections>
-                                            <action selector="centerLocation:" destination="BYZ-38-t0r" eventType="touchUpInside" id="IGB-RG-Ui4"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -55,9 +26,7 @@
                             <constraint firstAttribute="bottom" secondItem="Pap-Lp-51y" secondAttribute="bottom" id="I58-cT-7Uv"/>
                             <constraint firstItem="Pap-Lp-51y" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="QMe-0t-xiw"/>
                             <constraint firstItem="Pap-Lp-51y" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="dKv-oU-T2C"/>
-                            <constraint firstItem="I2F-FF-Kft" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="fOj-fv-47c"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Pap-Lp-51y" secondAttribute="trailing" id="lvj-jk-46R"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="I2F-FF-Kft" secondAttribute="trailing" id="o3v-uZ-hPt"/>
                         </constraints>
                     </view>
                     <connections>
@@ -77,17 +46,51 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GS9-aW-9At" customClass="YMKMapView">
-                                <rect key="frame" x="0.0" y="44" width="414" height="468"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="852"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="I2F-FF-Kft">
+                                <rect key="frame" x="346" y="361.5" width="68" height="173"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t03-Xw-YF4">
+                                        <rect key="frame" x="17.5" y="0.0" width="33" height="31"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="+"/>
+                                        <connections>
+                                            <action selector="zoomPlus:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Rzg-Y5-uJJ"/>
+                                            <action selector="zoomPlus:" destination="bGt-F6-IuU" eventType="touchUpInside" id="oKp-vF-y4T"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="03w-Gi-JJS">
+                                        <rect key="frame" x="18" y="71" width="32.5" height="31"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="_"/>
+                                        <connections>
+                                            <action selector="zoomMinus:" destination="bGt-F6-IuU" eventType="touchUpInside" id="kWe-U5-dL1"/>
+                                            <action selector="zoomMinus:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rnW-EH-Z9v"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YTc-nh-zd6">
+                                        <rect key="frame" x="0.0" y="142" width="68" height="31"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Center"/>
+                                        <connections>
+                                            <action selector="centerLocation:" destination="BYZ-38-t0r" eventType="touchUpInside" id="IGB-RG-Ui4"/>
+                                            <action selector="centerOnLocation:" destination="bGt-F6-IuU" eventType="touchUpInside" id="Fdc-Ei-QWC"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Aqi-Uv-3IW"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="GS9-aW-9At" firstAttribute="top" secondItem="COv-Do-bzc" secondAttribute="top" constant="44" id="1OX-8Q-TKM"/>
+                            <constraint firstItem="Aqi-Uv-3IW" firstAttribute="trailing" secondItem="I2F-FF-Kft" secondAttribute="trailing" id="2AU-dH-xtF"/>
                             <constraint firstItem="Aqi-Uv-3IW" firstAttribute="trailing" secondItem="GS9-aW-9At" secondAttribute="trailing" id="RCq-KU-uv4"/>
+                            <constraint firstItem="I2F-FF-Kft" firstAttribute="centerY" secondItem="COv-Do-bzc" secondAttribute="centerY" id="dX0-yG-Zks"/>
                             <constraint firstItem="GS9-aW-9At" firstAttribute="leading" secondItem="Aqi-Uv-3IW" secondAttribute="leading" id="nrt-hz-fIt"/>
-                            <constraint firstAttribute="bottom" secondItem="GS9-aW-9At" secondAttribute="bottom" constant="384" id="q67-A4-Z3F"/>
+                            <constraint firstAttribute="bottom" secondItem="GS9-aW-9At" secondAttribute="bottom" id="q67-A4-Z3F"/>
                         </constraints>
                     </view>
                     <connections>
