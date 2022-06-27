@@ -68,6 +68,36 @@
             </objects>
             <point key="canvasLocation" x="18.840579710144929" y="83.705357142857139"/>
         </scene>
+        <!--Yandex Map View Controller-->
+        <scene sceneID="hoC-6E-UA6">
+            <objects>
+                <viewController id="bGt-F6-IuU" customClass="YandexMapViewController" customModule="Task10" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="COv-Do-bzc">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GS9-aW-9At" customClass="YMKMapView">
+                                <rect key="frame" x="0.0" y="44" width="414" height="468"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Aqi-Uv-3IW"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="GS9-aW-9At" firstAttribute="top" secondItem="COv-Do-bzc" secondAttribute="top" constant="44" id="1OX-8Q-TKM"/>
+                            <constraint firstItem="Aqi-Uv-3IW" firstAttribute="trailing" secondItem="GS9-aW-9At" secondAttribute="trailing" id="RCq-KU-uv4"/>
+                            <constraint firstItem="GS9-aW-9At" firstAttribute="leading" secondItem="Aqi-Uv-3IW" secondAttribute="leading" id="nrt-hz-fIt"/>
+                            <constraint firstAttribute="bottom" secondItem="GS9-aW-9At" secondAttribute="bottom" constant="384" id="q67-A4-Z3F"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="mapView" destination="GS9-aW-9At" id="QBR-v7-hbU"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TKL-BL-gov" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="923" y="84"/>
+        </scene>
     </scenes>
     <resources>
         <systemColor name="systemBackgroundColor">

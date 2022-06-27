@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import YandexMapsMobile
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -14,6 +15,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        let apiYandexMapKey = "27129a42-ae9b-4593-83d9-7786e218cf92"
+        YMKMapKit.setApiKey(apiYandexMapKey)
+        YMKMapKit.sharedInstance()
         return true
     }
 

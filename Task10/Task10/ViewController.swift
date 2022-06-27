@@ -78,9 +78,8 @@ class Place: NSObject, MKAnnotation {
 extension ViewController: MKMapViewDelegate {
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
         let av = mapView.dequeueReusableAnnotationView(withIdentifier: "annotationView") ?? MKAnnotationView()
-        if let a = annotation as? Place {
-            let image = UIImage(named: a.imageName)?.resize(maxWidthHeight: 40)
-            av.image = image
+        if let a = annotation as? Place, let image = UIImage(named: a.imageName) {
+            av.image = image.resize(maxWidthHeight: 40)
         }
         return av
     }
