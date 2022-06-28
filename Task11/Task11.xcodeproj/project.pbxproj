@@ -16,6 +16,8 @@
 		4B447E32286B32A9008E0E03 /* Task11Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B447E31286B32A9008E0E03 /* Task11Tests.swift */; };
 		4B447E3C286B32A9008E0E03 /* Task11UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B447E3B286B32A9008E0E03 /* Task11UITests.swift */; };
 		4B447E3E286B32A9008E0E03 /* Task11UITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B447E3D286B32A9008E0E03 /* Task11UITestsLaunchTests.swift */; };
+		4B447E4B286B6A84008E0E03 /* AuthorizationChecker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B447E4A286B6A84008E0E03 /* AuthorizationChecker.swift */; };
+		4B447E4C286B6A84008E0E03 /* AuthorizationChecker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B447E4A286B6A84008E0E03 /* AuthorizationChecker.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +51,7 @@
 		4B447E37286B32A9008E0E03 /* Task11UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Task11UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B447E3B286B32A9008E0E03 /* Task11UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task11UITests.swift; sourceTree = "<group>"; };
 		4B447E3D286B32A9008E0E03 /* Task11UITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task11UITestsLaunchTests.swift; sourceTree = "<group>"; };
+		4B447E4A286B6A84008E0E03 /* AuthorizationChecker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationChecker.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +109,7 @@
 				4B447E23286B32A9008E0E03 /* Assets.xcassets */,
 				4B447E25286B32A9008E0E03 /* LaunchScreen.storyboard */,
 				4B447E28286B32A9008E0E03 /* Info.plist */,
+				4B447E4A286B6A84008E0E03 /* AuthorizationChecker.swift */,
 			);
 			path = Task11;
 			sourceTree = "<group>";
@@ -261,6 +265,7 @@
 				4B447E1F286B32A7008E0E03 /* ViewController.swift in Sources */,
 				4B447E1B286B32A7008E0E03 /* AppDelegate.swift in Sources */,
 				4B447E1D286B32A7008E0E03 /* SceneDelegate.swift in Sources */,
+				4B447E4B286B6A84008E0E03 /* AuthorizationChecker.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -269,6 +274,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4B447E32286B32A9008E0E03 /* Task11Tests.swift in Sources */,
+				4B447E4C286B6A84008E0E03 /* AuthorizationChecker.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

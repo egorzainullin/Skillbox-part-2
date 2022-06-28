@@ -17,26 +17,32 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="54" translatesAutoresizingMaskIntoConstraints="NO" id="w7C-c4-rzP">
-                                <rect key="frame" x="162" y="307.5" width="90.5" height="281.5"/>
+                                <rect key="frame" x="162" y="292.5" width="90.5" height="311"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kWY-XO-EAu">
-                                        <rect key="frame" x="0.0" y="0.0" width="41.5" height="20.5"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kWY-XO-EAu">
+                                        <rect key="frame" x="0.0" y="0.0" width="90.5" height="50"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Login" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="e7t-Zk-rJo">
-                                        <rect key="frame" x="0.0" y="74.5" width="63.5" height="34"/>
+                                        <rect key="frame" x="0.0" y="104" width="90.5" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <action selector="onLoginEditingDidEnd:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="Y2B-XX-Psn"/>
+                                        </connections>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="P52-e8-naP">
-                                        <rect key="frame" x="0.0" y="162.5" width="90.5" height="34"/>
+                                        <rect key="frame" x="0.0" y="192" width="90.5" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <action selector="onPasswordEditingEnd:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="1TD-xa-d74"/>
+                                        </connections>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pvL-Ym-jiA">
-                                        <rect key="frame" x="0.0" y="250.5" width="57.5" height="31"/>
+                                        <rect key="frame" x="0.0" y="280" width="90.5" height="31"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Send"/>
                                         <connections>
@@ -44,6 +50,12 @@
                                         </connections>
                                     </button>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstItem="e7t-Zk-rJo" firstAttribute="centerX" secondItem="w7C-c4-rzP" secondAttribute="centerX" id="Ask-pc-RZA"/>
+                                    <constraint firstItem="pvL-Ym-jiA" firstAttribute="centerX" secondItem="w7C-c4-rzP" secondAttribute="centerX" id="HtR-ar-GJI"/>
+                                    <constraint firstItem="P52-e8-naP" firstAttribute="centerX" secondItem="w7C-c4-rzP" secondAttribute="centerX" id="NJn-4A-E9h"/>
+                                    <constraint firstItem="kWY-XO-EAu" firstAttribute="centerX" secondItem="w7C-c4-rzP" secondAttribute="centerX" id="isx-NM-Rhv"/>
+                                </constraints>
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -57,6 +69,7 @@
                         <outlet property="labelWindow" destination="kWY-XO-EAu" id="8Hy-nP-Wh9"/>
                         <outlet property="loginTextField" destination="e7t-Zk-rJo" id="sPB-E8-euP"/>
                         <outlet property="passwordTextField" destination="P52-e8-naP" id="HMk-iX-CLX"/>
+                        <outlet property="sendButton" destination="pvL-Ym-jiA" id="hX7-1q-8il"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
