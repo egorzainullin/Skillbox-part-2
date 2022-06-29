@@ -8,7 +8,7 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
     @IBOutlet weak var labelWindow: UILabel!
     
     @IBOutlet weak var loginTextField: UITextField!
@@ -18,6 +18,22 @@ class ViewController: UIViewController {
     @IBOutlet weak var sendButton: UIButton!
     
     @IBAction func onSendButtonTouchUpInside(_ sender: Any) {
+        if let email = loginTextField.text, let password = passwordTextField.text {
+            if Checker.isValidEmail(email) {
+                if Checker.isValidPassword(password) {
+                    labelWindow.text = "Successful"
+                }
+                else {
+                    labelWindow.text = "Password is incorrect"
+                }
+            }
+            else {
+                labelWindow.text = "Email is incorrect"
+            }
+        }
+        else {
+            labelWindow.text = "Incorrect input"
+        }
     }
     
     func isNotEmpty(text1: String?, text2: String?) -> Bool{
@@ -50,7 +66,7 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
         sendButton.isEnabled = false
     }
-
-
+    
+    
 }
 

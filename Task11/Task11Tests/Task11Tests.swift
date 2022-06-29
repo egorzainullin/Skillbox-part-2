@@ -17,9 +17,16 @@ class Task11Tests: XCTestCase {
     override func tearDownWithError() throws {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
-
-    func testExample() throws {
-       
+    
+    func test() throws {
+        XCTAssertTrue(Checker.isValidEmail("123@mail.ru"))
+        XCTAssertTrue(Checker.isValidEmail("3_5@gmail.com"))
+        XCTAssertFalse(Checker.isValidEmail("12"))
+        XCTAssertFalse(Checker.isValidEmail("@mail.ru"))
+        
+        XCTAssertTrue(Checker.isValidPassword("123Abc"))
+        XCTAssertTrue(Checker.isValidPassword("aBc123"))
+        XCTAssertFalse(Checker.isValidPassword("12"))
+        XCTAssertFalse(Checker.isValidPassword("12a3"))
     }
-
 }
