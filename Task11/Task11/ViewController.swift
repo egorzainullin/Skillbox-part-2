@@ -42,8 +42,7 @@ class ViewController: UIViewController {
         }
         return false
     }
-    
-    @IBAction func onLoginEditingDidEnd(_ sender: Any) {
+    @IBAction func onLoginEditingChanged(_ sender: Any) {
         if isNotEmpty(text1: loginTextField.text, text2: passwordTextField.text) {
             sendButton.isEnabled = true
         }
@@ -52,7 +51,7 @@ class ViewController: UIViewController {
         }
     }
     
-    @IBAction func onPasswordEditingEnd(_ sender: Any) {
+    @IBAction func onPasswordEditingChanged(_ sender: Any) {
         if isNotEmpty(text1: loginTextField.text, text2: passwordTextField.text) {
             sendButton.isEnabled = true
         }
@@ -60,6 +59,7 @@ class ViewController: UIViewController {
             sendButton.isEnabled = false
         }
     }
+
     
     override func viewDidLoad() {
         super.viewDidLoad()

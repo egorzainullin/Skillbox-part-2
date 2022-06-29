@@ -30,7 +30,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                         <connections>
-                                            <action selector="onLoginEditingDidEnd:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="Y2B-XX-Psn"/>
+                                            <action selector="onLoginEditingChanged:" destination="BYZ-38-t0r" eventType="editingChanged" id="zWZ-iz-lm8"/>
                                         </connections>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="P52-e8-naP">
@@ -38,7 +38,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                         <connections>
-                                            <action selector="onPasswordEditingEnd:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="1TD-xa-d74"/>
+                                            <action selector="onPasswordEditingChanged:" destination="BYZ-38-t0r" eventType="editingChanged" id="Oc7-PS-Esr"/>
                                         </connections>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pvL-Ym-jiA">
