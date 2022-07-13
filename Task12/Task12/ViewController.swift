@@ -79,6 +79,7 @@ extension ViewController: ImagePickerDelegate {
 
     func didSelect(image: UIImage?) {
         self.imageView.image = image
+        // ci image nil
         if let image = image, let ciImage = image.ciImage {
             makeClassifierRequest(for: modelML, ciImage: ciImage)
         }
