@@ -14,6 +14,7 @@
 		4B8139F4287DF63C00BDDF32 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4B8139F3287DF63C00BDDF32 /* Assets.xcassets */; };
 		4B8139F7287DF63C00BDDF32 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4B8139F5287DF63C00BDDF32 /* LaunchScreen.storyboard */; };
 		4B8139FF287DF93E00BDDF32 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B8139FE287DF93E00BDDF32 /* ImagePicker.swift */; };
+		4BDC4EE1287EEC3C00BB124D /* Task12ImageClassifier 1.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 4BDC4EE0287EEC3C00BB124D /* Task12ImageClassifier 1.mlmodel */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		4B8139F6287DF63C00BDDF32 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4B8139F8287DF63C00BDDF32 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4B8139FE287DF93E00BDDF32 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
+		4BDC4EE0287EEC3C00BB124D /* Task12ImageClassifier 1.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = "Task12ImageClassifier 1.mlmodel"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +60,7 @@
 		4B8139E9287DF63900BDDF32 /* Task12 */ = {
 			isa = PBXGroup;
 			children = (
+				4BDC4EE0287EEC3C00BB124D /* Task12ImageClassifier 1.mlmodel */,
 				4B8139EA287DF63900BDDF32 /* AppDelegate.swift */,
 				4B8139EC287DF63900BDDF32 /* SceneDelegate.swift */,
 				4B8139EE287DF63900BDDF32 /* ViewController.swift */,
@@ -141,6 +144,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4BDC4EE1287EEC3C00BB124D /* Task12ImageClassifier 1.mlmodel in Sources */,
 				4B8139EF287DF63900BDDF32 /* ViewController.swift in Sources */,
 				4B8139FF287DF93E00BDDF32 /* ImagePicker.swift in Sources */,
 				4B8139EB287DF63900BDDF32 /* AppDelegate.swift in Sources */,

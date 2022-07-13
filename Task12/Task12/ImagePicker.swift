@@ -32,7 +32,6 @@ open class ImagePicker: NSObject {
     }
 
     public func present(from sourceView: UIView) {
-
         let alertController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
 
         if let action = self.action(for: .camera, title: "Take photo") {
@@ -58,7 +57,6 @@ open class ImagePicker: NSObject {
 
     private func pickerController(_ controller: UIImagePickerController, didSelect image: UIImage?) {
         controller.dismiss(animated: true, completion: nil)
-
         self.delegate?.didSelect(image: image)
     }
 }
