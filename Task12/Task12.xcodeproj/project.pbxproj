@@ -28,6 +28,7 @@
 		4B8139F8287DF63C00BDDF32 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4B8139FE287DF93E00BDDF32 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		4BDC4EE0287EEC3C00BB124D /* Task12ImageClassifier 1.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = "Task12ImageClassifier 1.mlmodel"; sourceTree = SOURCE_ROOT; };
+		4BDC4EE2287F3D9600BB124D /* Task12.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Task12.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +61,7 @@
 		4B8139E9287DF63900BDDF32 /* Task12 */ = {
 			isa = PBXGroup;
 			children = (
+				4BDC4EE2287F3D9600BB124D /* Task12.entitlements */,
 				4BDC4EE0287EEC3C00BB124D /* Task12ImageClassifier 1.mlmodel */,
 				4B8139EA287DF63900BDDF32 /* AppDelegate.swift */,
 				4B8139EC287DF63900BDDF32 /* SceneDelegate.swift */,
@@ -293,6 +295,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Task12/Task12.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 83RWD64KH8;
@@ -310,6 +313,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = SummerSpring.Task12;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -321,6 +325,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Task12/Task12.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 83RWD64KH8;
@@ -338,6 +343,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = SummerSpring.Task12;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

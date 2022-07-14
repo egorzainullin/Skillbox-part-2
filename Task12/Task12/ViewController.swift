@@ -66,11 +66,13 @@ class ViewController: UIViewController {
     }
     
     private func onDidUpdateState(_ result: Result){
-        switch result {
-        case .requestFailed:
-            confidenceLabel.text = "Request failed"
-        case .receiveResult(let resultModel):
-            confidenceLabel.text = "\(resultModel.identifier) with \(resultModel.confidence) %"
+        DispatchQueue.main.async {
+            switch result {
+            case .requestFailed:
+                self.confidenceLabel.text = "Request failed"
+            case .receiveResult(let resultModel):
+                self.confidenceLabel.text = "\(resultModel.identifier) with \(resultModel.confidence) %"
+            }
         }
     }
 }
@@ -80,23 +82,29 @@ extension ViewController: ImagePickerDelegate {
     func didSelect(image: UIImage?) {
         self.imageView.image = image
         // ci image nil
-        if let image = image, let ciImage = image.ciImage {
-            makeClassifierRequest(for: modelML, ciImage: ciImage)
+        if let image = image, let ciImage = CIImage(image: image) {
+            DispatchQueue.global(qos: .userInteractive).async {
+                self.makeClassifierRequest(for: self.modelML, ciImage: ciImage)
+            }
         }
     }
 }
 
-struct ClassifierResultModel {
-  let identifier: String
-  let confidence: Int
-  
-  var description: String {
-    return "This is \(identifier) with \(confidence)% confidence"
-  }
+extension ViewController {
+    private struct ClassifierResultModel {
+      let identifier: String
+      let confidence: Int
+      
+      var description: String {
+        return "This is \(identifier) with \(confidence)% confidence"
+      }
+    }
+
+    private enum Result {
+        case requestFailed
+        
+        case receiveResult(resultModel: ClassifierResultModel)
+    }
 }
 
-enum Result {
-    case requestFailed
-    
-    case receiveResult(resultModel: ClassifierResultModel)
-}
+
