@@ -42,7 +42,9 @@ class ViewController: UIViewController {
           do {
             try handler.perform([request])
           } catch {
-            self.onDidUpdateState(.requestFailed)
+              DispatchQueue.main.async {
+                self.onDidUpdateState(.requestFailed)
+              }
           }
         }
       }
@@ -51,7 +53,9 @@ class ViewController: UIViewController {
     private func handleClassifierResults(_ results: [Any]?) {
         guard let results = results as? [VNClassificationObservation],
           let firstResult = results.first else {
-          onDidUpdateState(.requestFailed)
+            DispatchQueue.main.async {
+                self.onDidUpdateState(.requestFailed)
+            }
           return
         }
         DispatchQueue.main.async { [weak self] in
@@ -65,15 +69,13 @@ class ViewController: UIViewController {
         self.imagePicker.present(from: sender)
     }
     
-    private func onDidUpdateState(_ result: Result){
-        DispatchQueue.main.async {
+    private func onDidUpdateState(_ result: Result) {
             switch result {
             case .requestFailed:
                 self.confidenceLabel.text = "Request failed"
             case .receiveResult(let resultModel):
                 self.confidenceLabel.text = "\(resultModel.identifier) with \(resultModel.confidence) %"
             }
-        }
     }
 }
 
