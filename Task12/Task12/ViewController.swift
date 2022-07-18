@@ -36,13 +36,16 @@ class ViewController: UIViewController {
         let request = VNCoreMLRequest(model: model) { [weak self] request, error in
             self?.handleClassifierResults(request.results)
         }
-        
+        #if targetEnvironment(simulator)
+            request.usesCPUOnly = true
+        #endif
         let handler = VNImageRequestHandler(ciImage: ciImage)
         DispatchQueue.global(qos: .userInteractive).async {
           do {
             try handler.perform([request])
           } catch {
               DispatchQueue.main.async {
+                print(error)
                 self.onDidUpdateState(.requestFailed)
               }
           }
