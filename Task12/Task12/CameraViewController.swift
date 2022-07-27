@@ -36,9 +36,7 @@ class CameraViewController: UIViewController, AVCaptureVideoDataOutputSampleBuff
     
     lazy var sequenceRequestHandler = VNSequenceRequestHandler()
     
-    var middleFaceX: CGFloat = 0.0
-    
-    var middleFaceY: CGFloat = 0.0
+    var faceRect: CGRect = CGRect()
     
     // MARK: UIViewController overrides
     
@@ -380,6 +378,8 @@ class CameraViewController: UIViewController, AVCaptureVideoDataOutputSampleBuff
         let faceBounds = VNImageRectForNormalizedRect(faceObservation.boundingBox, Int(displaySize.width), Int(displaySize.height))
         let middleX = faceBounds.midX
         let middleY = faceBounds.midY
+    
+        self.faceRect = faceBounds
         // ПОЧЕМУ НЕ КРУГ?
         let halfWidthOfElpise = 30.0
         let rect = CGRect(x: middleX - halfWidthOfElpise, y: middleY - halfWidthOfElpise, width: 2 * halfWidthOfElpise, height: 2 * halfWidthOfElpise)
