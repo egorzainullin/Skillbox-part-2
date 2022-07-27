@@ -36,6 +36,10 @@ class CameraViewController: UIViewController, AVCaptureVideoDataOutputSampleBuff
     
     lazy var sequenceRequestHandler = VNSequenceRequestHandler()
     
+    var middleFaceX: CGFloat = 0.0
+    
+    var middleFaceY: CGFloat = 0.0
+    
     // MARK: UIViewController overrides
     
     override func viewDidLoad() {
@@ -69,9 +73,9 @@ class CameraViewController: UIViewController, AVCaptureVideoDataOutputSampleBuff
             self.designatePreviewLayer(for: captureSession)
             return captureSession
         } catch let executionError as NSError {
-            self.presentError(executionError)
+            print(executionError)
         } catch {
-            self.presentErrorAlert(message: "An unexpected failure has occured")
+            print(error)
         }
         
         self.teardownAVCapture()
@@ -186,17 +190,6 @@ class CameraViewController: UIViewController, AVCaptureVideoDataOutputSampleBuff
         }
     }
     
-    // MARK: Helper Methods for Error Presentation
-    
-    fileprivate func presentErrorAlert(withTitle title: String = "Unexpected Failure", message: String) {
-        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        self.present(alertController, animated: true)
-    }
-    
-    fileprivate func presentError(_ error: NSError) {
-        self.presentErrorAlert(withTitle: "Failed with error \(error.code)", message: error.localizedDescription)
-    }
-    
     // MARK: Helper Methods for Handling Device Orientation & EXIF
     
     fileprivate func radiansForDegrees(_ degrees: CGFloat) -> CGFloat {
@@ -276,7 +269,7 @@ class CameraViewController: UIViewController, AVCaptureVideoDataOutputSampleBuff
         let normalizedCenterPoint = CGPoint(x: 0.5, y: 0.5)
         
         guard let rootLayer = self.rootLayer else {
-            self.presentErrorAlert(message: "view was not property initialized")
+            print("view was not property initialized")
             return
         }
         
@@ -385,7 +378,13 @@ class CameraViewController: UIViewController, AVCaptureVideoDataOutputSampleBuff
     fileprivate func addIndicators(to faceRectanglePath: CGMutablePath, faceLandmarksPath: CGMutablePath, for faceObservation: VNFaceObservation) {
         let displaySize = self.captureDeviceResolution
         let faceBounds = VNImageRectForNormalizedRect(faceObservation.boundingBox, Int(displaySize.width), Int(displaySize.height))
+        let middleX = faceBounds.midX
+        let middleY = faceBounds.midY
+        // ПОЧЕМУ НЕ КРУГ?
+        let halfWidthOfElpise = 30.0
+        let rect = CGRect(x: middleX - halfWidthOfElpise, y: middleY - halfWidthOfElpise, width: 2 * halfWidthOfElpise, height: 2 * halfWidthOfElpise)
         faceRectanglePath.addRect(faceBounds)
+        faceRectanglePath.addEllipse(in: rect)
     }
     
     /// - Tag: DrawPaths
