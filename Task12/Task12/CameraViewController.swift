@@ -381,8 +381,8 @@ class CameraViewController: UIViewController, AVCaptureVideoDataOutputSampleBuff
     
         self.faceRect = faceBounds
         // ПОЧЕМУ НЕ КРУГ?
-        let halfWidthOfElpise = 30.0
-        let rect = CGRect(x: middleX - halfWidthOfElpise, y: middleY - halfWidthOfElpise, width: 2 * halfWidthOfElpise, height: 2 * halfWidthOfElpise)
+        let halfWidthOfEllipse = 30.0
+        let rect = CGRect(x: middleX - halfWidthOfEllipse, y: middleY - halfWidthOfEllipse, width: 2 * halfWidthOfEllipse, height: 2 * halfWidthOfEllipse)
         faceRectanglePath.addRect(faceBounds)
         faceRectanglePath.addEllipse(in: rect)
     }
