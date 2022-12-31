@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="dK1-0S-Kar">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="dK1-0S-Kar">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -17,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="37" translatesAutoresizingMaskIntoConstraints="NO" id="piv-mk-3Tg">
-                                <rect key="frame" x="0.0" y="185.5" width="414" height="525.5"/>
+                                <rect key="frame" x="0.0" y="183.5" width="414" height="529"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EJH-Pr-1eA">
                                         <rect key="frame" x="186.5" y="0.0" width="41.5" height="20.5"/>
@@ -32,7 +33,7 @@
                                         </constraints>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xoW-bz-rIS">
-                                        <rect key="frame" x="173.5" y="494.5" width="67" height="31"/>
+                                        <rect key="frame" x="169.5" y="494.5" width="75" height="34.5"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Button"/>
                                         <connections>
@@ -67,17 +68,31 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bP6-wJ-OJq">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <rect key="frame" x="0.0" y="48" width="414" height="714"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iPv-hi-g7Y">
+                                <rect key="frame" x="169.5" y="817" width="75" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="8e3-0d-uN3"/>
+                                    <constraint firstAttribute="width" constant="75" id="Niz-Ok-Wd8"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Shoot"/>
+                                <connections>
+                                    <action selector="shoot:" destination="dK1-0S-Kar" eventType="touchUpInside" id="G4y-S2-yls"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="tCg-Z8-gud"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="tCg-Z8-gud" firstAttribute="bottom" secondItem="bP6-wJ-OJq" secondAttribute="bottom" id="5Ai-b2-brS"/>
+                            <constraint firstItem="tCg-Z8-gud" firstAttribute="bottom" secondItem="bP6-wJ-OJq" secondAttribute="bottom" constant="100" id="5Ai-b2-brS"/>
                             <constraint firstItem="bP6-wJ-OJq" firstAttribute="leading" secondItem="tCg-Z8-gud" secondAttribute="leading" id="Avg-At-2pf"/>
                             <constraint firstItem="bP6-wJ-OJq" firstAttribute="top" secondItem="tCg-Z8-gud" secondAttribute="top" id="QnQ-Nv-Yxg"/>
                             <constraint firstItem="tCg-Z8-gud" firstAttribute="trailing" secondItem="bP6-wJ-OJq" secondAttribute="trailing" id="Sdz-gY-cCW"/>
+                            <constraint firstItem="iPv-hi-g7Y" firstAttribute="centerX" secondItem="vSs-jv-Ce9" secondAttribute="centerX" id="nTp-tP-yOE"/>
+                            <constraint firstItem="tCg-Z8-gud" firstAttribute="bottom" secondItem="iPv-hi-g7Y" secondAttribute="bottom" constant="10" id="ur4-yA-MhH"/>
                         </constraints>
                     </view>
                     <connections>
