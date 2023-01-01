@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4B457F2F2961A8A50049EA62 /* Rocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B457F2E2961A8A50049EA62 /* Rocket.swift */; };
 		4B4ED2D828858B0400E530D9 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4ED2D728858B0400E530D9 /* CameraViewController.swift */; };
 		4B8139EB287DF63900BDDF32 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B8139EA287DF63900BDDF32 /* AppDelegate.swift */; };
 		4B8139ED287DF63900BDDF32 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B8139EC287DF63900BDDF32 /* SceneDelegate.swift */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4B457F2E2961A8A50049EA62 /* Rocket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rocket.swift; sourceTree = "<group>"; };
 		4B4ED2D728858B0400E530D9 /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
 		4B8139E7287DF63900BDDF32 /* Task12.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Task12.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B8139EA287DF63900BDDF32 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -70,6 +72,7 @@
 				4B8139EE287DF63900BDDF32 /* ViewController.swift */,
 				4B8139F0287DF63900BDDF32 /* Main.storyboard */,
 				4B4ED2D728858B0400E530D9 /* CameraViewController.swift */,
+				4B457F2E2961A8A50049EA62 /* Rocket.swift */,
 				4B8139FE287DF93E00BDDF32 /* ImagePicker.swift */,
 				4B8139F3287DF63C00BDDF32 /* Assets.xcassets */,
 				4B8139F5287DF63C00BDDF32 /* LaunchScreen.storyboard */,
@@ -149,6 +152,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4B457F2F2961A8A50049EA62 /* Rocket.swift in Sources */,
 				4BDC4EE1287EEC3C00BB124D /* Task12ImageClassifier 1.mlmodel in Sources */,
 				4B8139EF287DF63900BDDF32 /* ViewController.swift in Sources */,
 				4B8139FF287DF93E00BDDF32 /* ImagePicker.swift in Sources */,

@@ -37,7 +37,10 @@ class CameraViewController: UIViewController, AVCaptureVideoDataOutputSampleBuff
     lazy var sequenceRequestHandler = VNSequenceRequestHandler()
     
     var faceRect: CGRect = CGRect()
-    var rocketImageView = UIImageView()
+    
+    var rocket: Rocket?
+    
+    var pointToShoot = CGPoint()
     
     // MARK: UIViewController overrides
     
@@ -49,6 +52,10 @@ class CameraViewController: UIViewController, AVCaptureVideoDataOutputSampleBuff
         self.prepareVisionRequest()
         
         self.session?.startRunning()
+        
+        if let previewView = previewView {
+            rocket = Rocket(parentView: previewView)
+        }
     }
     
     // Ensure that the interface stays locked in Portrait.
@@ -365,6 +372,7 @@ class CameraViewController: UIViewController, AVCaptureVideoDataOutputSampleBuff
     
     @IBAction func shoot(_ sender: Any) {
         isShooting = true
+        rocket?.animateShoot(toPoint: CGPoint(x: 500, y: 500))
     }
     
     fileprivate func addPoints(in landmarkRegion: VNFaceLandmarkRegion2D, to path: CGMutablePath, applying affineTransform: CGAffineTransform, closingWhenComplete closePath: Bool) {
@@ -380,48 +388,20 @@ class CameraViewController: UIViewController, AVCaptureVideoDataOutputSampleBuff
         }
     }
     
-    func resizeImage(image: UIImage, targetSize: CGSize) -> UIImage? {
-        let size = image.size
-        
-        let widthRatio  = targetSize.width  / size.width
-        let heightRatio = targetSize.height / size.height
-        
-        // Figure out what our orientation is, and use that to form the rectangle
-        var newSize: CGSize
-        if(widthRatio > heightRatio) {
-            newSize = CGSize(width: size.width * heightRatio, height: size.height * heightRatio)
-        } else {
-            newSize = CGSize(width: size.width * widthRatio, height: size.height * widthRatio)
-        }
-        
-        // This is the rect that we've calculated out and this is what is actually used below
-        let rect = CGRect(origin: .zero, size: newSize)
-        
-        // Actually do the resizing to the rect using the ImageContext stuff
-        UIGraphicsBeginImageContextWithOptions(newSize, false, 1.0)
-        image.draw(in: rect)
-        let newImage = UIGraphicsGetImageFromCurrentImageContext()
-        UIGraphicsEndImageContext()
-        
-        return newImage
-    }
+
     
     fileprivate func addIndicators(to faceRectanglePath: CGMutablePath, faceLandmarksPath: CGMutablePath, for faceObservation: VNFaceObservation) {
         let displaySize = self.captureDeviceResolution
         let faceBounds = VNImageRectForNormalizedRect(faceObservation.boundingBox, Int(displaySize.width), Int(displaySize.height))
         let middleX = faceBounds.midX
         let middleY = faceBounds.midY
+        
+        if isShooting {
+            rocket?.animateShoot(toPoint: CGPoint(x: middleX, y: middleY))
+        }
     
         self.faceRect = faceBounds
         // ПОЧЕМУ НЕ КРУГ?
-        previewView?.addSubview(rocketImageView)
-        let rocketImage =
-        resizeImage(image: UIImage(named: "spaceship")!, targetSize: CGSize(width: 50, height: 50))!
-        rocketImageView = UIImageView(image: rocketImage)
-        rocketImageView.center = CGPoint(x: 100, y: 100)
-        UIView.animate(withDuration: 2.0, animations: {
-            self.rocketImageView.center = CGPoint(x: 200, y: 200)
-        })
                 
         let halfWidthOfEllipse = 30.0
         let rect = CGRect(x: middleX - halfWidthOfEllipse, y: middleY - halfWidthOfEllipse, width: 2 * halfWidthOfEllipse, height: 2 * halfWidthOfEllipse)
