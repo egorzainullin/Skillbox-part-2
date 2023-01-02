@@ -395,9 +395,12 @@ class CameraViewController: UIViewController, AVCaptureVideoDataOutputSampleBuff
         let faceBounds = VNImageRectForNormalizedRect(faceObservation.boundingBox, Int(displaySize.width), Int(displaySize.height))
         let middleX = faceBounds.midX
         let middleY = faceBounds.midY
+        let midPoint = CGPoint(x: middleX, y: middleY)
         
-        if isShooting {
-            rocket?.animateShoot(toPoint: CGPoint(x: middleX, y: middleY))
+        
+        if let rocket = rocket, rocket.isShooting {
+            rocket.animateShoot(toPoint: midPoint)
+            
         }
     
         self.faceRect = faceBounds
