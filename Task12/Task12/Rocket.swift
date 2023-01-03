@@ -31,6 +31,7 @@ class Rocket {
         isShooting = true
         rocketImageView.alpha = 1
         let centerOfRocket = rocketImageView.center
+        print(centerOfRocket)
         let vector = CGPoint(x: centerOfRocket.x - toPoint.x, y: centerOfRocket.y-toPoint.y)
         let distance = sqrt(vector.x * vector.x + vector.y * vector.y)
         if distance < 50 {
