@@ -1,9 +1,9 @@
 /*
-See LICENSE folder for this sample’s licensing information.
-
-Abstract:
-Contains the main app implementation using Vision.
-*/
+ See LICENSE folder for this sample’s licensing information.
+ 
+ Abstract:
+ Contains the main app implementation using Vision.
+ */
 
 import UIKit
 import AVKit
@@ -239,7 +239,7 @@ class CameraViewController: UIViewController, AVCaptureVideoDataOutputSampleBuff
             
             guard let faceDetectionRequest = request as? VNDetectFaceRectanglesRequest,
                   let results = faceDetectionRequest.results else {
-                    return
+                return
             }
             DispatchQueue.main.async {
                 // Add the observations to the tracking list
@@ -321,9 +321,9 @@ class CameraViewController: UIViewController, AVCaptureVideoDataOutputSampleBuff
     
     fileprivate func updateLayerGeometry() {
         guard let overlayLayer = self.detectionOverlayLayer,
-            let rootLayer = self.rootLayer,
-            let previewLayer = self.previewLayer
-            else {
+              let rootLayer = self.rootLayer,
+              let previewLayer = self.previewLayer
+        else {
             return
         }
         
@@ -388,7 +388,7 @@ class CameraViewController: UIViewController, AVCaptureVideoDataOutputSampleBuff
         }
     }
     
-
+    
     
     fileprivate func addIndicators(to faceRectanglePath: CGMutablePath, faceLandmarksPath: CGMutablePath, for faceObservation: VNFaceObservation) {
         let displaySize = self.captureDeviceResolution
@@ -400,12 +400,11 @@ class CameraViewController: UIViewController, AVCaptureVideoDataOutputSampleBuff
         
         if let rocket = rocket, rocket.isShooting {
             rocket.animateShoot(toPoint: midPoint)
-            
         }
-    
+        
         self.faceRect = faceBounds
         // ПОЧЕМУ НЕ КРУГ?
-                
+        
         let halfWidthOfEllipse = 30.0
         let rect = CGRect(x: middleX - halfWidthOfEllipse, y: middleY - halfWidthOfEllipse, width: 2 * halfWidthOfEllipse, height: 2 * halfWidthOfEllipse)
         faceRectanglePath.addRect(faceBounds)
@@ -415,8 +414,8 @@ class CameraViewController: UIViewController, AVCaptureVideoDataOutputSampleBuff
     /// - Tag: DrawPaths
     fileprivate func drawFaceObservations(_ faceObservations: [VNFaceObservation]) {
         guard let faceRectangleShapeLayer = self.detectedFaceRectangleShapeLayer,
-            let faceLandmarksShapeLayer = self.detectedFaceLandmarksShapeLayer
-            else {
+              let faceLandmarksShapeLayer = self.detectedFaceLandmarksShapeLayer
+        else {
             return
         }
         
@@ -479,8 +478,8 @@ class CameraViewController: UIViewController, AVCaptureVideoDataOutputSampleBuff
         
         do {
             try self.sequenceRequestHandler.perform(requests,
-                                                     on: pixelBuffer,
-                                                     orientation: exifOrientation)
+                                                    on: pixelBuffer,
+                                                    orientation: exifOrientation)
         } catch let error as NSError {
             NSLog("Failed to perform SequenceRequest: %@", error)
         }
@@ -527,7 +526,7 @@ class CameraViewController: UIViewController, AVCaptureVideoDataOutputSampleBuff
                 
                 guard let landmarksRequest = request as? VNDetectFaceLandmarksRequest,
                       let results = landmarksRequest.results else {
-                        return
+                    return
                 }
                 
                 // Perform all UI updates (drawing) on the main queue, not the background queue on which this handler is being called.

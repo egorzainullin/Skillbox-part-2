@@ -33,12 +33,18 @@ class Rocket {
         let centerOfRocket = rocketImageView.center
         let vector = CGPoint(x: centerOfRocket.x - toPoint.x, y: centerOfRocket.y-toPoint.y)
         let distance = sqrt(vector.x * vector.x + vector.y * vector.y)
+        print("toPoint \(toPoint)")
+        print("center of rocket \(centerOfRocket)")
         if distance < 50 {
+            print("animating boom")
             animateBoom(pointWhereBoom: toPoint)
         }
-        UIView.animate(withDuration: 1.0, animations: { [self] in
-            rocketImageView.center = toPoint
-        })
+        else {
+            print("animate rocket flying")
+            UIView.animate(withDuration: distance * 5.0, animations: { [self] in
+                rocketImageView.center = toPoint
+            })
+        }
     }
     
     private func animateBoom(pointWhereBoom: CGPoint) {
