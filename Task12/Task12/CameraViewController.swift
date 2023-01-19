@@ -400,6 +400,8 @@ class CameraViewController: UIViewController, AVCaptureVideoDataOutputSampleBuff
         
         if let rocket = rocket, rocket.isShooting {
             rocket.animateShoot(toPoint: midPoint)
+            print("is shooting")
+            
         }
         
         self.faceRect = faceBounds
