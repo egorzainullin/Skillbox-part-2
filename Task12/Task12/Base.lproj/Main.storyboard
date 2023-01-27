@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="dK1-0S-Kar">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="wse-GC-bTj">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -102,6 +102,93 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="raw-ss-IOs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="857" y="70"/>
+        </scene>
+        <!--Flat View Controller-->
+        <scene sceneID="oAs-lN-saa">
+            <objects>
+                <viewController id="wse-GC-bTj" customClass="FlatViewController" customModule="Task12" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="xYz-Nd-d2i">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Пионерская" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bfh-Jw-oUS">
+                                <rect key="frame" x="0.0" y="348" width="414" height="80"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="6mZ-gG-8DY"/>
+                                    <constraint firstAttribute="width" constant="414" id="Vm7-PR-N2I"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="30" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7r8-2F-XqX">
+                                <rect key="frame" x="0.0" y="491" width="414" height="70"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="70" id="Yhh-8j-Xwc"/>
+                                    <constraint firstAttribute="width" constant="414" id="bJ6-vo-6FD"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="rZ9-xz-nAd"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Square" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vga-zw-u0k">
+                                <rect key="frame" x="180" y="438" width="54" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="UndergroundStation" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wIO-tX-1ms">
+                                <rect key="frame" x="7" y="285" width="400" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="400" id="G50-Zb-Uta"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zAA-m5-avm">
+                                <rect key="frame" x="0.0" y="683.5" width="414" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Predict"/>
+                                <connections>
+                                    <action selector="onTouchUpPredictButton:" destination="wse-GC-bTj" eventType="touchUpInside" id="KsU-U4-0q1"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Price" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z1H-e4-qG0">
+                                <rect key="frame" x="0.0" y="611" width="414" height="40"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="VV6-Ll-pVi"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="wIO-tX-1ms" firstAttribute="centerX" secondItem="xYz-Nd-d2i" secondAttribute="centerX" id="5fO-eI-opY"/>
+                            <constraint firstItem="7r8-2F-XqX" firstAttribute="trailing" secondItem="Z1H-e4-qG0" secondAttribute="trailing" id="C5b-yc-hCL"/>
+                            <constraint firstItem="7r8-2F-XqX" firstAttribute="leading" secondItem="zAA-m5-avm" secondAttribute="leading" id="Naw-cp-Ck8"/>
+                            <constraint firstItem="7r8-2F-XqX" firstAttribute="leading" secondItem="bfh-Jw-oUS" secondAttribute="leading" id="RUc-qm-TBL"/>
+                            <constraint firstItem="Vga-zw-u0k" firstAttribute="top" secondItem="bfh-Jw-oUS" secondAttribute="bottom" constant="10" id="Zdk-ar-quU"/>
+                            <constraint firstItem="7r8-2F-XqX" firstAttribute="top" secondItem="Vga-zw-u0k" secondAttribute="bottom" constant="32" id="hAQ-O7-Qzd"/>
+                            <constraint firstItem="wIO-tX-1ms" firstAttribute="top" secondItem="VV6-Ll-pVi" secondAttribute="top" constant="237" id="mtf-LM-KPm"/>
+                            <constraint firstItem="bfh-Jw-oUS" firstAttribute="centerX" secondItem="xYz-Nd-d2i" secondAttribute="centerX" id="nmI-1Y-JjI"/>
+                            <constraint firstItem="7r8-2F-XqX" firstAttribute="centerX" secondItem="Vga-zw-u0k" secondAttribute="centerX" id="oxk-05-129"/>
+                            <constraint firstItem="zAA-m5-avm" firstAttribute="top" secondItem="Z1H-e4-qG0" secondAttribute="bottom" constant="27" id="q8J-hE-w1w"/>
+                            <constraint firstItem="Z1H-e4-qG0" firstAttribute="top" secondItem="7r8-2F-XqX" secondAttribute="bottom" constant="75" id="qvU-bl-Sg1"/>
+                            <constraint firstItem="7r8-2F-XqX" firstAttribute="trailing" secondItem="zAA-m5-avm" secondAttribute="trailing" id="w7i-HS-790"/>
+                            <constraint firstItem="7r8-2F-XqX" firstAttribute="leading" secondItem="Z1H-e4-qG0" secondAttribute="leading" id="xme-wj-yHK"/>
+                            <constraint firstItem="bfh-Jw-oUS" firstAttribute="top" secondItem="wIO-tX-1ms" secondAttribute="bottom" constant="42" id="ymQ-lo-P27"/>
+                            <constraint firstItem="bfh-Jw-oUS" firstAttribute="top" secondItem="wIO-tX-1ms" secondAttribute="bottom" constant="42" id="zsq-LM-zY5"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="priceLabel" destination="Z1H-e4-qG0" id="Rgy-3z-Kqg"/>
+                        <outlet property="squareTextField" destination="7r8-2F-XqX" id="uET-c8-5B5"/>
+                        <outlet property="undergroundStationTextField" destination="bfh-Jw-oUS" id="unr-gj-ITa"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ckV-yn-n2p" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1831.8840579710147" y="69.642857142857139"/>
         </scene>
     </scenes>
     <resources>
