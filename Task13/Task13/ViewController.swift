@@ -29,9 +29,9 @@ class AssetStore {
     
     
     static func test() -> AssetStore {
-        return AssetStore(video1: AssetStore.asset("video1", type: "mov"),
-                          video2: AssetStore.asset("video2", type: "mov"),
-                          video3: AssetStore.asset("video3", type: "mov"),
+        return AssetStore(video1: AssetStore.asset("video1", type: "mp4"),
+                          video2: AssetStore.asset("video2", type: "mp4"),
+                          video3: AssetStore.asset("video3", type: "mp4"),
                           audio1: AssetStore.asset("audio1", type: "mp3"),
                           audio2: AssetStore.asset("audio2", type: "mp3"))
     }
@@ -39,7 +39,7 @@ class AssetStore {
     static func asset(_ resource: String, type: String) -> AVAsset {
         guard let url = Bundle.main.url(forResource: resource, withExtension: type)
         else {
-            fatalError("Can't find file with this name")
+            fatalError("Can't find file \(resource) with this name")
         }
         return AVAsset(url: url)
     }
@@ -63,7 +63,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         let assetStore = AssetStore.test()
-        let video1Asset = assetStore.video2
+        let video1Asset = assetStore.video1
         startPlaying(asset: video1Asset)
     }
 
